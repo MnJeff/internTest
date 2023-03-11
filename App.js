@@ -93,6 +93,24 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <StatusBar />
+      <View style={styles.image}>
+        <Image
+          style={{
+            width: "20%",
+            height: 60,
+          }}
+          source={require("./assets/Logo.png")}
+        />
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Image
+            style={{ alignSelf: "flex-end", height: 50 }}
+            source={require("./assets/Leftlogo.png")}
+          />
+        </View>
+      </View>
       <View style={styles.titleTop}>
         <Text style={[styles.textTop, { fontSize: 22 }]}>
           A joke a day keeps the doctor away
@@ -119,6 +137,17 @@ export default function App() {
           disabled={hasVoted}
           onPress={() => handleVote("notfunny")}
         />
+      </View>
+      <View style={styles.bottomText}>
+        <Text style={{ color: "gray", textAlign: "center" }}>
+          This app is created as part of Hlsolution program. The materials
+          contained on this website are provided for general infomartion only
+          and do not constitute any form of advice. HLS assumes no
+          responsibility for the accuracy of any particular statement and
+          accepts no liability for any loss or damage which may arise from
+          reliance onn the infomartion contained on this site
+        </Text>
+        <Text style={{ marginTop: 10 }}>Copyright 2021 HLS</Text>
       </View>
     </View>
   );
@@ -151,5 +180,21 @@ const styles = StyleSheet.create({
     minWidth: 130,
     justifyContent: "center",
     alignItems: "center",
+  },
+  image: {
+    resizeMode: "contain",
+    marginTop: 40,
+    flexDirection: "row",
+    marginBottom: 20,
+  },
+  bottomText: {
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    borderTopWidth: 1,
+    borderTopColor: "#e1e5e8",
+    paddingTop: 5,
+    paddingHorizontal: 20,
+    marginTop: 30,
   },
 });
