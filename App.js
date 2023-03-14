@@ -126,12 +126,12 @@ export default function App() {
         <Button
           title="This is funny"
           disabled={hasVoted}
-          onPress={() => handleVote("funny")}
+          onPress={() => [handleVote("funny"), handleNextJoke]}
         />
         <Button
           title="This is not funny"
           disabled={hasVoted}
-          onPress={() => handleVote("notfunny")}
+          onPress={() => [handleVote("notfunny"), handleNextJoke]}
         />
       </View>
       <View style={styles.bottomText}>
